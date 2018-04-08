@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  
   def home
     @blogs = Blog.all
     @skills = Skill.all
@@ -9,4 +10,5 @@ class PagesController < ApplicationController
 
   def contact
   end
+
 end
