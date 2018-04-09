@@ -6,6 +6,14 @@ class PortfolioPagesController < ApplicationController
     @portfolio_items = PortfolioPage.all
   end
 
+  def angular
+    @angular_portfolio_items = PortfolioPage.angular
+  end
+
+  def rails
+    @rails_portfolio_items = PortfolioPage.ruby_on_rails
+  end
+
   def new
     @portfolio_item = PortfolioPage.new
   end 
