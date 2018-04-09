@@ -32,6 +32,9 @@ class PortfolioPagesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def find_portfolio_item
