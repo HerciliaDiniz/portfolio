@@ -35,6 +35,11 @@ class PortfolioPagesController < ApplicationController
   def show
   end
 
+  def destroy
+    @portfolio_item.destroy
+    redirect_to portfolios_page_url, notice: 'Record was removed!' 
+  end
+
   private
 
   def find_portfolio_item
