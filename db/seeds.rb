@@ -2,7 +2,7 @@
   Topic.create!(
     title: "Topic #{topic}"
   )
-end
+end 
 
 puts "#{Topic.count} topics were created."
 
