@@ -23,7 +23,7 @@ class PortfolioPagesController < ApplicationController
   end
 
   def create
-    @portfolio_item = PortfolioPage.new(portfolio_params)
+    @portfolio_item = PortfolioPage.new portfolio_params
 
     if @portfolio_item.save
       redirect_to portfolio_pages_path, notice: 'Your portfolio item is now live.' 
@@ -56,12 +56,10 @@ class PortfolioPagesController < ApplicationController
   end 
 
   def portfolio_params
-    params.require(:portfolio_page).permit(
-      :title, 
-      :subtitle, 
-      :body,
-      technologies_attributes: [:name]
-    )
+    params.require(:portfolio_page).permit(:title, 
+                                           :subtitle, 
+                                           :body,
+                                           technologies_attributes: [:name])
   end
 
 end
