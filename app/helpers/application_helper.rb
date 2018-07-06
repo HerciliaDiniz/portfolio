@@ -9,4 +9,14 @@ module ApplicationHelper
     end
   end
 
+  def source_helper
+    if session[:source]
+      @greeting = "Thanks for visiting me from #{session[:source]}."
+    end
+  end
+
+  def set_copyright_helper
+    @copyright = "&copy; #{Time.now.year} | <strong>Lynx Digital</strong> * <em>Hercilia Diniz</em> * All rights reserved".html_safe
+  end
+
 end
