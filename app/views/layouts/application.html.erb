@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" href="../../../../favicon.ico">
+
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
 
@@ -10,19 +15,24 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-    <%= render "partials/nav", location: "top" %>
+      <%= render "partials/application_nav" %>
 
-    <%= login_helper %>
+      <%= login_helper %>
 
-    <%= yield %>
+      <%= yield %>
 
-    <p><%= source_helper %></p>
-
-    <small><%= set_copyright_helper %></small>
+      <p><%= source_helper %></p>
     
+    </div>
   </body>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <small><%= set_copyright_helper %></small>
+    </div>
+  </footer>
+
 </html>
