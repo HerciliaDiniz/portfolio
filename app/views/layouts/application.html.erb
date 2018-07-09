@@ -20,19 +20,14 @@
 
       <%= render "partials/application_nav" %>
 
-      <%= login_helper %>
-
       <%= yield %>
 
       <p><%= source_helper %></p>
     
+      <%= render "partials/footer" %>
+      
     </div>
   </body>
 
-  <footer class="mastfoot mt-auto">
-    <div class="inner">
-      <small><%= set_copyright_helper %></small>
-    </div>
-  </footer>
 
 </html>
