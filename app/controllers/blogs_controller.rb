@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
-  before_action :authorize_user!, only: [:edit, :update, :destroy]
+  before_action :authorize_user!, only: [:new, :create, :edit, :update, :destroy]
   layout "blog"
 
   def index
@@ -76,7 +76,7 @@ class BlogsController < ApplicationController
     def authorize_user!
       unless can?(:manage, @blog)
         flash[:alert] = 'Access Denied!'
-        redirect_to blog_path(@blog)
+        redirect_to blogs_path
       end
     end
 

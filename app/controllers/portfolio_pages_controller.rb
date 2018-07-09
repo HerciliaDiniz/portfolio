@@ -1,5 +1,6 @@
 class PortfolioPagesController < ApplicationController
   before_action :find_portfolio_item, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user!, only: [:new, :create, :edit, :update, :destroy]
   layout "portfolio_pages"
 
   def index 
@@ -60,6 +61,13 @@ class PortfolioPagesController < ApplicationController
                                            :subtitle, 
                                            :body,
                                            technologies_attributes: [:name])
+  end
+
+  def authorize_user!
+    unless can?(:manage, @portfolio_item)
+      flash[:alert] = 'Access Denied!'
+      redirect_to portfolio_pages_path
+    end
   end
 
 end
