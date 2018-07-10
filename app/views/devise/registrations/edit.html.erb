@@ -1,10 +1,9 @@
 <div class="card m-5 card-form">
-  <h5 class="card-header">Edit <%= resource_name.to_s.humanize %></h5>
+  <h5 class="card-header text-center">Edit <%= resource_name.to_s.humanize %></h5>
   <div class="card-body">
-
     <div class="row">
-      <div class="col-md-8">
 
+      <div class="col-md-8 mr-2">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= devise_error_messages! %>
 
@@ -24,10 +23,9 @@
 
           <div class="form-group">
             <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+              <small><em><%= @minimum_password_length %> characters minimum</em></small>
             <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
             <% if @minimum_password_length %>
-              <br />
-              <em><%= @minimum_password_length %> characters minimum</em>
             <% end %>
           </div>
 
@@ -42,22 +40,19 @@
           </div>
 
           <div class="actions">
-            <%= f.submit "Update", class: "btn btn-primary" %>
+            <%= f.submit "Update", class: "btn btn-dark" %>
           </div>
         <% end %>
-
       </div>
 
-      <div class="col-md-4">
-    
+      <div class="col-md-3">
         <h3 class="form-group">Cancel my account</h3>
           <p class="form-group">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
-
       </div>
-    </div>
 
-    <div class="auth-links">
-      <%= link_to "Back", :back %>
+      <div class="auth-links btn btn-outline-dark mt-5">
+        <%= link_to "Back", :back %>
+      </div>
     </div>
 
   </div>

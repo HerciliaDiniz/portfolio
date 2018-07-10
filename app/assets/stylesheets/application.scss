@@ -122,3 +122,8 @@ body {
 .auth-links a {
   color: black
 }
+
+.auth-links a:hover {
+  color: white;
+  text-decoration: none;
+}
