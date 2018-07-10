@@ -15,17 +15,21 @@
     <%= javascript_include_tag 'application' %>
   </head>
     
-  <body class="text-center">
+  <body>
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-
-      <%= render "partials/application_nav" %>
+      
+      <%= render "partials/blog_nav" %>
 
       <%= yield %>
 
-      <p><%= source_helper %></p>
-    
-      <%= render "partials/footer" %>
+      <footer>
       
+        <p><%= source_helper %></p>
+      
+        <%= render "partials/footer" %>
+
+      </footer>
+
     </div>
   </body>
 
