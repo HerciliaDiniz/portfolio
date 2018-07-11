@@ -18,21 +18,9 @@
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-      <nav>
-
-          <%= render "partials/application_nav" %>
-        
-      </nav>
-
-        <%= yield %>
-  
-      <footer>
-      
-        <p><%= source_helper %></p>
-      
-        <%= render "partials/footer" %>
-
-      </footer>
+    <%= render "partials/application_nav" %>
+    <%= yield %>
+    <%= render "partials/footer" %>
       
     </div>
   </body>
