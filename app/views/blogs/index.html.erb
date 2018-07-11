@@ -1,3 +1,17 @@
 <p id="notice"><%= notice %></p>
+
+<%= render "partials/blog_page_body" %>
+
+<div class="col-md-8 blog-main">
+  <h3 class="pb-3 mb-4 font-italic border-bottom">
+    Hercília Diniz
+  </h3>
+
 <%= render @blogs %>
 <%= link_to 'New Blog', new_blog_path if can? :manage, @blog %>
+
+  <nav class="blog-pagination">
+    <a class="btn btn-outline-primary" href="#">Older</a>
+    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+  </nav>
+</div>

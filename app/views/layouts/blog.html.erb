@@ -18,26 +18,20 @@
   <body>
      
     <%= render "partials/blog_nav" %>
-    
-    <%= render "partials/blog_page_body" %>
 
-      <main role="main" class="container">
-        <div class="row">
-          <div class="col-md-8 blog-main">
+    <main role="main" class="container">
+      <div class="row">
 
-            <h3 class="pb-3 mb-4 font-italic border-bottom">
-              From the Firehose
-            </h3>
+        <%= yield %>
+        <%= render "partials/blog_sidebar" %>
+            
+        <footer>   
+          <p><%= source_helper %></p>
+          <%= render "partials/footer" %>
+        </footer>
 
-            <%= yield %>
-            <%= render "partials/blog_sidebar" %>
-                
-            <footer>   
-              <p><%= source_helper %></p>
-              <%= render "partials/footer" %>
-            </footer>
+      </div>
+    </main>
 
-        </div>
-      </main>
   </body>
 </html>
