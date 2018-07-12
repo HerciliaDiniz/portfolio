@@ -4,13 +4,11 @@
   <h3 class="pb-3 mb-4 font-italic border-bottom">
     Hercília Diniz
   </h3>
+  <%= link_to 'New Blog Post', new_blog_path if can? :manage, @blog %>
 
-<%= render @blogs %>
-<%= link_to 'New Blog', new_blog_path if can? :manage, @blog %>
+  <%= paginate @blogs %>
+  <%= render @blogs %>
 
   <p><a href="#">Back to top</a></p>
-  <nav class="blog-pagination">
-    <a class="btn btn-outline-primary" href="#">Older</a>
-    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-  </nav>
+  <%= paginate @blogs %>
 </div>
